@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add notes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+</head>
+<body>
+     <h1>Add your notes below</h1>
+
+
+      <section>
+          <div>
+              <form method="post">
+                  {% csrf_token %}
+                  <label>Add Notes</label>
+                  <input type="text" name="add">
+
+                  <button type="submit">Add To</button>
+
+                  <label>Status</label>
+                  <input type="text" value="{{done}}">
+              </form>
+          </div>
+      </section>
+      <br>
+
+     <section class="view_notes">
+          <a href="{% url 'view_notes' %}">
+              <button type="submit">View Notes</button>
+          </a>
+      </section>
+
+      <br>
+
+      <section class="delete_notes">
+           <a href="{% url 'delete_notes' %}">
+               <button type="submit">Delete Notes</button>
+           </a>
+       </section>
+
+
+ <style>
+        footer {
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: auto;
+            padding: 10px;
+            width: 100%;
+            background-color: #1e1e1e;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer img {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+ <footer>
+        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django Logo">
+        © 2024 Built on Django
+    </footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete notes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'delete.css' %}">
+</head>
+<body>
+     <h1>DELETE NOTES</h1>
+
+     <section>
+         <div>
+             <form method="post">
+                 {% csrf_token %}
+                 <ul>
+                     {% for note in notes%}
+                         {{note}}
+                     {% endfor %}
+                 </ul>
+                 <label>enter note to delete</label>
+                 <input type="text" name="del">
+
+                 <button type="submit">delete note</button>
+
+                 <label>status</label>
+                 <input type="text" value="{{status}}">
+             </form>
+         </div>
+     </section>
+     <br>
+
+
+     <section class="view_notes">
+          <a href="{% url 'view_notes' %}">
+              <button type="submit">View Notes</button>
+          </a>
+     </section>
+     <br>
+
+        <section class="add_notes">
+         <a href="{% url 'add_notes' %}">
+             <button type="submit">Add Notes</button>
+         </a>
+     </section>
+
+     <style>
+        footer {
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: auto;
+            padding: 10px;
+            width: 100%;
+            background-color: #1e1e1e;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer img {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+ <footer>
+        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django Logo">
+        © 2024 Built on Django
+    </footer>
+
+</body>
+</html>

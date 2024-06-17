@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 407</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'error_login.css' %}">
+</head>
+<body>
+    <h1>Invalid Login Credentials!</h1>
+    <br>
+    <p>Try to Enter Again Or Contact us</p>
+
+
+     <section class="add_notes">
+         <a href="{% url 'login' %}">
+             <button type="submit">Back To Login</button>
+         </a>
+     </section>
+
+      <style>
+        footer {
+            text-align: center;
+            color: #b0b0b0;
+            margin-top: auto;
+            padding: 10px;
+            width: 100%;
+            background-color: #1e1e1e;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer img {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+ <footer>
+        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django Logo">
+        © 2024 Built on Django
+    </footer>
+
+
+</body>
+</html>
